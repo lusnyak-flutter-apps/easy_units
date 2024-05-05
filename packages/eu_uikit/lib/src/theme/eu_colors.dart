@@ -3,6 +3,21 @@ import 'package:flutter/material.dart';
 class EUColors {
   EUColors._();
 
+  static const List<Color> all = [
+  whiteColor ,
+  blackColor,
+  accentRedColor,
+  accentGreenColor,
+  accentBlueColor,
+  accentVioletColor,
+  accentYellowColor ,
+  baceLightColor,
+  baceDarkColor ,
+  baceGreyColor ,
+  baceDarkGreyColor41,
+  baceDarkGreyColor20,
+  baceCustomGreyColor,
+  ];
   static const whiteColor = Color(0xFFFFFFFF);
   static const blackColor = Color(0xFF000000);
 

@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(child: EasyUnitsAssets.icons.volume.svg()),
+        child: Center(child: EasyUnitsAssets.icons.splashIcon.svg()),
       ),
     );
   }

@@ -11,17 +11,28 @@ class ExampleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("UIKIT"),),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Wrap(
-            spacing: 8.0,
-            runSpacing: 8.0,
-            children: EasyUnitsAssets.icons.values
-                .map((e) => SizedBox.square(
-                      dimension: 50,
-                      child: e.svg(),
-                    ))
-                .toList(),
-          ).paddingSymmetric(horizontal: 16.w, vertical: 16.h),
+        child: ListView(
+          children: [
+            ExpansionTile(title: const Text("COLORS"),
+              children: EUColors.all.map((e) => ListTile(
+                leading: Container(width : 40, height:40,  decoration: BoxDecoration(color: e, border: Border.all()),),
+                title: Text(e.toString()),
+                contentPadding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
+              )).toList(),
+            ),
+            ExpansionTile(title: const Text("ICONS"),
+              children: EasyUnitsAssets.icons.values.map((e) => ListTile(
+                leading: e.svg(width: 40.w),
+                title: Text(e.path.split("/").last),
+                contentPadding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
+              )).toList(),
+            ),
+            ExpansionTile(title: const Text("TEXT STYLES"),
+              children: textStyles.map((e) => ListTile(
+                title: Text("${e.fontFamily?.split("/").last} ${e.fontWeight?.value} ${e.fontSize?.round()}", style: e,),
+              )).toList()
+            ),
+          ],
         ),
       ),
     );

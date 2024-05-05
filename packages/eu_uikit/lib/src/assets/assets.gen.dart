@@ -101,6 +101,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/speed.svg
   SvgGenImage get speed => const SvgGenImage('assets/icons/speed.svg');
 
+  /// File path: assets/icons/splash_icon.svg
+  SvgGenImage get splashIcon => const SvgGenImage('assets/icons/splash_icon.svg');
+
   /// File path: assets/icons/stop.svg
   SvgGenImage get stop => const SvgGenImage('assets/icons/stop.svg');
 
@@ -162,6 +165,7 @@ class $AssetsIconsGen {
         shoeSize,
         slPrefixes,
         speed,
+        splashIcon,
         stop,
         substance,
         temperature,
