@@ -3,6 +3,13 @@ import 'package:flutter/material.dart';
 
 import '../../../presentations/example_uikit/example_uikit.dart';
 import '../../../presentations/splash/splash_screen.dart';
+import '../../../presentations/add_unit/add_unit_screen.dart';
+import '../../../presentations/choose_unit_type/choose_unit_type_screen.dart';
+import '../../../presentations/convert/convert_screen.dart';
+import '../../../presentations/favorite/favorite_screen.dart';
+import '../../../presentations/home/home_screen.dart';
+import '../../../presentations/plans_screen/plans_screen.dart';
+import '../../../presentations/settings/settings_screen.dart';
 
 part 'app_router.gr.dart';
 
