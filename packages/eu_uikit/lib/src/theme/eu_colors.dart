@@ -33,5 +33,10 @@ class EUColors {
   static const baceDarkGreyColor41 = Color(0xFF414040);
   static const baceDarkGreyColor20 = Color(0xFF202020);
   static const baceCustomGreyColor = Color(0xFF535554);
+  static const navGreyColor = Color(0xFF999999);
+
+  static const navBarSvgSelectedColor = ColorFilter.mode(blackColor, BlendMode.srcIn);
+  static const navBarSvgUnSelectedColor = ColorFilter.mode(navGreyColor, BlendMode.srcIn);
+
 
 }

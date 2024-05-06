@@ -1,4 +1,6 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:easy_units/core/router/app_router/app_router.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -12,7 +14,11 @@ class ChooseUnitTypeScreen extends StatelessWidget {
         title: const Text("Choose unit type"),
       ),
       body: SafeArea(
-        child: Container(),
+        child: Center(
+          child: TextButton(onPressed: (){
+            context.pushRoute(ConvertRoute());
+          }, child: Text("Convert Screen")),
+        ),
       ),
     );
   }

@@ -17,10 +17,31 @@ GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
 @AutoRouterConfig()
 class AppRouter extends _$AppRouter {
-
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(page: SplashRoute.page, initial: true),
-    AutoRoute(page: ExampleRoute.page),
-  ];
+        AutoRoute(page: SplashRoute.page, initial: true),
+        AutoRoute(page: ExampleRoute.page),
+        AutoRoute(page: HomeRoute.page, children: [
+          unitsTap,
+          AutoRoute(page: FavoriteRoute.page),
+          AutoRoute(page: PlansRoute.page),
+          AutoRoute(page: SettingsRoute.page),
+        ])
+      ];
 }
+
+@RoutePage(name: 'UnitsTap')
+class UnitsTapScreen extends AutoRouter {
+  const UnitsTapScreen({super.key});
+}
+
+final unitsTap = AutoRoute(
+  page: UnitsTap.page,
+  children: [
+    AutoRoute(
+      page: ChooseUnitTypeRoute.page,
+      initial: true,
+    ),
+    AutoRoute(page: ConvertRoute.page),
+  ],
+);

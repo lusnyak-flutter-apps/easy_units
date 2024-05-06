@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:easy_units/core/router/app_router/app_router.dart';
 import 'package:eu_uikit/eu_uikit.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,9 @@ class ExampleScreen extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: [
+            ListTile(title: const Text("Easy Unit"), onTap: (){
+                context.pushRoute(const HomeRoute());
+            },),
             ExpansionTile(title: const Text("COLORS"),
               children: EUColors.all.map((e) => ListTile(
                 leading: Container(width : 40, height:40,  decoration: BoxDecoration(color: e, border: Border.all()),),

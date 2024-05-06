@@ -1,4 +1,6 @@
 import 'package:auto_route/annotations.dart';
+import 'package:easy_units/presentations/add_unit/add_unit_screen.dart';
+import 'package:eu_uikit/eu_uikit.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -12,7 +14,20 @@ class ConvertScreen extends StatelessWidget {
         title: const Text("Convert"),
       ),
       body: SafeArea(
-        child: Container(),
+        child: Center(
+          child: IconButton(
+            icon: EasyUnitsAssets.icons.add.svg(),
+            onPressed: () async {
+              await showModalBottomSheet(
+                useRootNavigator: true,
+                context: context,
+                builder: (bottomSheetContext) {
+                  return const AddUnitScreen();
+                },
+              );
+            },
+          ),
+        ),
       ),
     );
   }

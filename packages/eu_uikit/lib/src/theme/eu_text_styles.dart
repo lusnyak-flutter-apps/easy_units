@@ -13,7 +13,8 @@ List<TextStyle> get textStyles => [
   headingTextStyle,
   bodyBold15TextStyle,
   bodyRegular15TextStyle,
-  bodySmall10TextStyle
+  bodySmall10TextStyle,
+  boldSmall10TextStyle
 ];
 
 TextStyle get headerH1TextStyle => TextStyle(
@@ -79,6 +80,16 @@ TextStyle get bodyRegular15TextStyle => TextStyle(
     );
 
 TextStyle get bodySmall10TextStyle => TextStyle(
+  fontSize: 10.sp,
+  height: 13 / 10,
+  fontFamily: FontFamily.mulish,
+  fontWeight: FontWeight.w500,
+  fontStyle: FontStyle.normal,
+  color: EUColors.baceCustomGreyColor,
+  package: kPackageName,
+);
+
+TextStyle get boldSmall10TextStyle => TextStyle(
       fontSize: 10.sp,
       height: 13 / 10,
       fontFamily: FontFamily.mulish,
