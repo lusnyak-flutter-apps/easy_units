@@ -1,0 +1,82 @@
+name: eu_uikit
+description: "App UIKit package"
+version: 0.0.1
+#homepage:
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  flutter_svg: ^2.0.10+1
+  rive: ^0.13.2
+  flutter_screenutil: ^5.9.0
+  awesome_extensions: ^2.0.13
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+  build_runner: ^2.4.9
+  flutter_gen_runner: ^5.4.0
+
+flutter:
+   uses-material-design: true
+   generate: false
+   assets:
+     - assets/fonts/
+     - assets/icons/
+
+   fonts:
+     - family: Onest
+       fonts:
+         - asset: assets/fonts/onest/Onest-Black.ttf
+           weight: 900
+         - asset: assets/fonts/onest/Onest-ExtraBold.ttf
+           weight: 800
+         - asset: assets/fonts/onest/Onest-Bold.ttf
+           weight: 700
+         - asset: assets/fonts/onest/Onest-SemiBold.ttf
+           weight: 600
+         - asset: assets/fonts/onest/Onest-Medium.ttf
+           weight: 500
+         - asset: assets/fonts/onest/Onest-Regular.ttf
+           weight: 400
+         - asset: assets/fonts/onest/Onest-Light.ttf
+           weight: 300
+         - asset: assets/fonts/onest/Onest-ExtraLight.ttf
+           weight: 200
+         - asset: assets/fonts/onest/Onest-Thin.ttf
+           weight: 100
+     - family: Mulish
+       fonts:
+         - asset: assets/fonts/mulish/Mulish-Black.ttf
+           weight: 900
+         - asset: assets/fonts/mulish/Mulish-ExtraBold.ttf
+           weight: 800
+         - asset: assets/fonts/mulish/Mulish-Bold.ttf
+           weight: 700
+         - asset: assets/fonts/mulish/Mulish-SemiBold.ttf
+           weight: 600
+         - asset: assets/fonts/mulish/Mulish-Medium.ttf
+           weight: 500
+         - asset: assets/fonts/mulish/Mulish-Regular.ttf
+           weight: 400
+         - asset: assets/fonts/mulish/Mulish-Light.ttf
+           weight: 300
+         - asset: assets/fonts/mulish/Mulish-ExtraLight.ttf
+           weight: 200
+
+flutter_gen:
+  output: lib/src/assets/
+  line_length: 100
+  assets:
+    enabled: true
+    outputs:
+      package_parameter_enabled: true
+      class_name: EasyUnitsAssets
+
+  integrations:
+    flutter_svg: true
+    rive: true
