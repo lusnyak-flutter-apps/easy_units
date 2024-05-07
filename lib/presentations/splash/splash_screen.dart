@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:easy_units/core/router/app_router/app_router.dart';
 import 'package:eu_uikit/eu_uikit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 @RoutePage()
 class SplashScreen extends StatefulWidget {
@@ -14,7 +15,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2), () {
+    FlutterNativeSplash.remove();
+    Future.delayed(const Duration(seconds: 3), () {
       context.replaceRoute(const ExampleRoute());
     });
     super.initState();
