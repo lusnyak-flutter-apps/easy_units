@@ -76,5 +76,13 @@ struct EasyUnitsWidget: Widget {
     EasyUnitsWidget()
 } timeline: {
     SimpleEntry(date: .now, emoji: "😀")
+    SimpleEntry(date: .now, emoji: "😀")
+}
+
+
+#Preview(as: .systemMedium) {
+    EasyUnitsWidget()
+} timeline: {
+    SimpleEntry(date: .now, emoji: "🤩")
     SimpleEntry(date: .now, emoji: "🤩")
 }
