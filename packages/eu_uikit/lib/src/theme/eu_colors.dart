@@ -4,22 +4,24 @@ class EUColors {
   EUColors._();
 
   static const List<Color> all = [
-  whiteColor ,
-  blackColor,
-  accentRedColor,
-  accentGreenColor,
-  accentBlueColor,
-  accentVioletColor,
-  accentYellowColor ,
-  baceLightColor,
-  baceDarkColor ,
-  baceGreyColor ,
-  baceDarkGreyColor41,
-  baceDarkGreyColor20,
-  baceCustomGreyColor,
+    whiteColor,
+    blackColor,
+    greyColor,
+    accentRedColor,
+    accentGreenColor,
+    accentBlueColor,
+    accentVioletColor,
+    accentYellowColor,
+    baceLightColor,
+    baceDarkColor,
+    baceGreyColor,
+    baceDarkGreyColor41,
+    baceDarkGreyColor20,
+    baceCustomGreyColor,
   ];
   static const whiteColor = Color(0xFFFFFFFF);
   static const blackColor = Color(0xFF000000);
+  static const greyColor = Color(0xFF979797);
 
   static const accentRedColor = Color(0xFFFF5F57);
   static const accentGreenColor = Color(0xFFD6FF79);
@@ -34,9 +36,11 @@ class EUColors {
   static const baceDarkGreyColor20 = Color(0xFF202020);
   static const baceCustomGreyColor = Color(0xFF535554);
   static const navGreyColor = Color(0xFF999999);
+  static const textFieldGreyColor = Color(0xFFF7F6F6);
+  static const textFieldHintColor = Color(0xFFABA9A9);
 
-  static const navBarSvgSelectedColor = ColorFilter.mode(blackColor, BlendMode.srcIn);
-  static const navBarSvgUnSelectedColor = ColorFilter.mode(navGreyColor, BlendMode.srcIn);
-
-
+  static const navBarSvgSelectedColor =
+      ColorFilter.mode(blackColor, BlendMode.srcIn);
+  static const navBarSvgUnSelectedColor =
+      ColorFilter.mode(navGreyColor, BlendMode.srcIn);
 }
