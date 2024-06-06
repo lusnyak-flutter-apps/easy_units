@@ -13,15 +13,19 @@ class ChooseUnitTypeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Choose unit type"),
-      ),
       body: SafeArea(
           child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0.w),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              Text(
+                AppStrings.chooseUnitPageTitle,
+                textAlign: TextAlign.start,
+                style: headerH1TextStyle,
+              ).paddingOnly(top: 10.w),
+              16.h.heightBox,
               const SearchTextField(),
               const SizedBox(
                 height: 24,

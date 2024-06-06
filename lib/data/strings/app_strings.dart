@@ -20,4 +20,15 @@ class AppStrings {
   static const String time = "Time";
   static const String torque = "Torque";
   static const String volume = "Volume";
+  static const String choosePlaneTitle =
+      "Unlock full features with a subscription ";
+  static const String planeFeatureFavorites = "Unlimited favorites";
+  static const String planeFeatureConversion = "Advanced conversion features";
+  static const String planeFeatureAds = "No adds";
+  static const String planeFeatureUpdates = "Regular updates and improvments";
+  static const String planeSubscriptionMonthly = "Monthly plus";
+  static const String planeSubscriptionAnnual = "Annual plus";
+  static const String planePageTitle = "Choose your \nplan";
+  static const String favoritePageTitle = "Favorite";
+  static const String chooseUnitPageTitle = "Choose \nunit type";
 }
