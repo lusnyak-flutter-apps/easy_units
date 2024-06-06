@@ -16,3 +16,4 @@ export 'src/widgets/plan_subscription_container.dart';
 export 'package:flutter_svg/svg.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:awesome_extensions/awesome_extensions.dart';
+export 'package:flutter_slidable/flutter_slidable.dart';

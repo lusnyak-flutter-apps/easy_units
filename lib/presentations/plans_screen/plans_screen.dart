@@ -10,10 +10,6 @@ class PlansScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   automaticallyImplyLeading: false,
-      //   title: const Text("Choose your plan"),
-      // ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -58,11 +54,11 @@ class PlansScreen extends StatelessWidget {
                 top: 16.w,
               ),
               32.h.heightBox,
-              PlanSubscriptionContainer(
+              const PlanSubscriptionContainer(
                 name: AppStrings.planeSubscriptionMonthly,
                 price: 249,
               ),
-              PlanSubscriptionContainer(
+              const PlanSubscriptionContainer(
                 name: AppStrings.planeSubscriptionAnnual,
                 price: 1490,
                 bgColor: EUColors.accentGreenColor,

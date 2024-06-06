@@ -12,44 +12,41 @@ class FavoriteScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  AppStrings.favoritePageTitle,
-                  textAlign: TextAlign.start,
-                  style: headerH1TextStyle,
-                ).paddingOnly(top: 10.w),
-                16.h.heightBox,
-                FavoriteUnitContainer(),
-                FavoriteUnitContainer(
-                  firstUnit: "mpg",
-                  secondUnit: "l/100 km",
-                  bgColor: EUColors.accentBlueColor,
-                  onPressedDelete: (context) {
-                    debugPrint("onPressedDelete");
-                  },
-                  onPressedSettings: (context) {
-                    debugPrint("onPressedSettings");
-                  },
-                ),
-                FavoriteUnitContainer(
-                  firstUnit: "℉",
-                  secondUnit: "°C",
-                  bgColor: EUColors.accentVioletColor,
-                  onPressedDelete: (context) {
-                    debugPrint("onPressedDelete");
-                  },
-                  onPressedSettings: (context) {
-                    debugPrint("onPressedSettings");
-                  },
-                ),
-                FavoriteUnitContainer(),
-              ],
-            ),
-          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                AppStrings.favoritePageTitle,
+                textAlign: TextAlign.start,
+                style: headerH1TextStyle,
+              ).paddingOnly(top: 10.w),
+              16.h.heightBox,
+              const FavoriteUnitContainer(),
+              FavoriteUnitContainer(
+                firstUnit: "mpg",
+                secondUnit: "l/100 km",
+                bgColor: EUColors.accentBlueColor,
+                onPressedDelete: (context) {
+                  debugPrint("onPressedDelete");
+                },
+                onPressedSettings: (context) {
+                  debugPrint("onPressedSettings");
+                },
+              ),
+              FavoriteUnitContainer(
+                firstUnit: "℉",
+                secondUnit: "°C",
+                bgColor: EUColors.accentVioletColor,
+                onPressedDelete: (context) {
+                  debugPrint("onPressedDelete");
+                },
+                onPressedSettings: (context) {
+                  debugPrint("onPressedSettings");
+                },
+              ),
+              const FavoriteUnitContainer(),
+            ],
+          ).paddingSymmetric(horizontal: 16.w),
         ),
       ),
     );
