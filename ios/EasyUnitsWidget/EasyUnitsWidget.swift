@@ -9,47 +9,86 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
+    func placeholder(in context: Context) -> EasyUnitsEntry {
+        EasyUnitsEntry(date: Date(), unitType: "Speed", fromUnit: "mph", toUnit: "km/h")
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
+    func getSnapshot(in context: Context, completion: @escaping (EasyUnitsEntry) -> ()) {
+        let entry:  EasyUnitsEntry
+        if(context.isPreview) {
+            entry = placeholder(in: context)
+        } else {
+            entry = EasyUnitsEntry(date: Date(), unitType: "Speed", fromUnit: "mph", toUnit: "km/h")
+        }
+        
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
+        getSnapshot(in: context) { entry in
+            let timeline = Timeline(entries: [entry], policy: TimelineReloadPolicy.atEnd)
+            completion(timeline)
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let emoji: String
+struct  EasyUnitsEntry: TimelineEntry {
+    var date: Date
+    
+    let unitType: String
+    let fromUnit: String
+    let toUnit: String
 }
 
 struct EasyUnitsWidgetEntryView : View {
     var entry: Provider.Entry
-
-    var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
+    @Environment(\.widgetFamily) var widgetFamily
+    
+    var smallBody: some View {
+        VStack( spacing: 8) {
+            VStack (spacing: 8) {
+                Image("speed").frame(maxWidth: .infinity, alignment: .trailing)
+                Spacer()
+                Text(entry.unitType)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .foregroundColor(.black)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(8)
+            .background(ContainerRelativeShape().fill(Color(.lightGray)))
+            HStack(spacing: 8){
+                Text(entry.fromUnit)
+                Text("->")
+                Text(entry.toUnit)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(8)
+            .background(ContainerRelativeShape()
+                .fill(Color(.yellow)))
         }
+    }
+    
+    var mediumBody: some View {
+        HStack {
+            smallBody
+            VStack(content: {
+                Text("Medium part")
+            })
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(8)
+            .background(ContainerRelativeShape()
+                    .fill(Color(.lightText)))
+        }
+    }
+    
+    var body: some View {
+        switch widgetFamily {
+        case .systemSmall:
+            smallBody
+        default:
+            mediumBody
+        }
+        
     }
 }
 
@@ -69,20 +108,35 @@ struct EasyUnitsWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 #Preview(as: .systemSmall) {
     EasyUnitsWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "😀")
+    EasyUnitsEntry(date: Date(),
+                   unitType: "Speed",
+                   fromUnit: "mph",
+                   toUnit: "km/h")
 }
 
 
 #Preview(as: .systemMedium) {
     EasyUnitsWidget()
 } timeline: {
-    SimpleEntry(date: .now, emoji: "🤩")
-    SimpleEntry(date: .now, emoji: "🤩")
+    EasyUnitsEntry(date: Date(),
+                   unitType: "Speed",
+                   fromUnit: "mph",
+                   toUnit: "km/h")
+}
+
+
+#Preview(as: .systemLarge) {
+    EasyUnitsWidget()
+} timeline: {
+    EasyUnitsEntry(date: Date(),
+                   unitType: "Speed",
+                   fromUnit: "mph",
+                   toUnit: "km/h")
 }
