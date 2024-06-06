@@ -28,6 +28,7 @@ dependencies:
   flutter_native_splash: ^2.4.0
   home_widget: ^0.5.0
   flutter_staggered_grid_view: ^0.7.0
+  flutter_slidable: ^3.1.0
 
   eu_uikit:
     path: ./packages/eu_uikit

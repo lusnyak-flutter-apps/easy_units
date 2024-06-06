@@ -1,4 +1,6 @@
 import 'package:auto_route/annotations.dart';
+import 'package:easy_units/data/strings/app_strings.dart';
+import 'package:eu_uikit/eu_uikit.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -8,11 +10,47 @@ class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Favorite"),
-      ),
       body: SafeArea(
-        child: Container(),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  AppStrings.favoritePageTitle,
+                  textAlign: TextAlign.start,
+                  style: headerH1TextStyle,
+                ).paddingOnly(top: 10.w),
+                16.h.heightBox,
+                FavoriteUnitContainer(),
+                FavoriteUnitContainer(
+                  firstUnit: "mpg",
+                  secondUnit: "l/100 km",
+                  bgColor: EUColors.accentBlueColor,
+                  onPressedDelete: (context) {
+                    debugPrint("onPressedDelete");
+                  },
+                  onPressedSettings: (context) {
+                    debugPrint("onPressedSettings");
+                  },
+                ),
+                FavoriteUnitContainer(
+                  firstUnit: "℉",
+                  secondUnit: "°C",
+                  bgColor: EUColors.accentVioletColor,
+                  onPressedDelete: (context) {
+                    debugPrint("onPressedDelete");
+                  },
+                  onPressedSettings: (context) {
+                    debugPrint("onPressedSettings");
+                  },
+                ),
+                FavoriteUnitContainer(),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

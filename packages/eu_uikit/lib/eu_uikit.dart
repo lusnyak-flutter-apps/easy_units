@@ -8,6 +8,9 @@ export 'src/assets/assets.gen.dart';
 export 'src/assets/fonts.gen.dart';
 export 'src/widgets/unit_container.dart';
 export 'src/widgets/fields/search_text_field.dart';
+export 'src/widgets/favorite_unit_container.dart';
+export 'src/widgets/plan_feature_element.dart';
+export 'src/widgets/plan_subscription_container.dart';
 
 /// packages
 export 'package:flutter_svg/svg.dart';
