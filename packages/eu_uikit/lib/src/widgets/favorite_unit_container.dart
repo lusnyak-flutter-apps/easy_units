@@ -1,7 +1,5 @@
 import 'package:eu_uikit/eu_uikit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class FavoriteUnitContainer extends StatelessWidget {
