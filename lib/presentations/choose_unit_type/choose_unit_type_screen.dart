@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:easy_units/core/router/app_router/app_router.dart';
+// import 'package:easy_units/core/router/app_router/app_router.dart';
+import 'package:easy_units/data/strings/app_strings.dart';
+import 'package:eu_uikit/eu_uikit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 @RoutePage()
 class ChooseUnitTypeScreen extends StatelessWidget {
@@ -9,16 +12,135 @@ class ChooseUnitTypeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Choose unit type"),
-      ),
       body: SafeArea(
-        child: Center(
-          child: TextButton(onPressed: (){
-            context.pushRoute(const ConvertRoute());
-          }, child: const Text("Convert Screen")),
-        ),
-      ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  AppStrings.chooseUnitPageTitle,
+                  textAlign: TextAlign.start,
+                  style: headerH1TextStyle,
+                ).paddingOnly(top: 10.w),
+                16.h.heightBox,
+                const SearchTextField(),
+                24.h.heightBox,
+                StaggeredGrid.count(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 8.w,
+                  crossAxisSpacing: 8.w,
+                  children: [
+                    ///TODO create UnitContainer Data,
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        bgColor: EUColors.baceGreyColor,
+                        withLock: true,
+                        icon: EasyUnitsAssets.icons.substance.svg(
+                          width: 40.w,
+                        ),
+                        title: AppStrings.amountOfSubstance,
+                      ),
+                    ),
+                    StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        withLock: false,
+                        icon: EasyUnitsAssets.icons.area.svg(width: 40.0.w),
+                        title: AppStrings.area,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        bgColor: EUColors.accentRedColor,
+                        withLock: false,
+                        title: AppStrings.angles,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        withLock: true,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        bgColor: EUColors.accentYellowColor,
+                        withLock: false,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        bgColor: EUColors.navGreyColor,
+                        withLock: false,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        bgColor: EUColors.accentVioletColor,
+                        withLock: false,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        withLock: true,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        withLock: false,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        bgColor: EUColors.accentVioletColor,
+                        withLock: false,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 1,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        bgColor: EUColors.accentYellowColor,
+                        withLock: false,
+                      ),
+                    ),
+                    const StaggeredGridTile.count(
+                      crossAxisCellCount: 2,
+                      mainAxisCellCount: 1,
+                      child: UnitContainer(
+                        bgColor: EUColors.accentRedColor,
+                        withLock: true,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ).paddingSymmetric(horizontal: 16.0.w),
+          )
+          // Center(
+          //   child: TextButton(onPressed: (){
+          //     context.pushRoute(ConvertRoute());
+          //   }, child: Text("Convert Screen")),
+          // ),
+          ),
     );
   }
 }

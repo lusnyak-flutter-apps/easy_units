@@ -1,5 +1,6 @@
 import 'package:eu_uikit/eu_uikit.dart' as eu_uikit;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../core/router/app_router/app_router.dart';
 
@@ -10,6 +11,10 @@ class EasyUnitsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return eu_uikit.ScreenUtilInit(
       designSize: const Size(360, 844),
       builder: (context, _) {
