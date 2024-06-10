@@ -6,6 +6,8 @@ export 'src/theme/eu_main_theme.dart';
 export 'src/theme/eu_text_styles.dart';
 export 'src/assets/assets.gen.dart';
 export 'src/assets/fonts.gen.dart';
+export 'src/widgets/unit_container.dart';
+export 'src/widgets/fields/search_text_field.dart';
 
 /// packages
 export 'package:flutter_svg/svg.dart';
