@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:easy_units/core/router/app_router/app_router.dart';
+// import 'package:easy_units/core/router/app_router/app_router.dart';
 import 'package:easy_units/data/strings/app_strings.dart';
 import 'package:eu_uikit/eu_uikit.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +52,7 @@ class ChooseUnitTypeScreen extends StatelessWidget {
                         title: AppStrings.area,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 1,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
@@ -61,14 +61,14 @@ class ChooseUnitTypeScreen extends StatelessWidget {
                         title: AppStrings.angles,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 1,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
                         withLock: true,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 1,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
@@ -76,7 +76,7 @@ class ChooseUnitTypeScreen extends StatelessWidget {
                         withLock: false,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 2,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
@@ -84,7 +84,7 @@ class ChooseUnitTypeScreen extends StatelessWidget {
                         withLock: false,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 1,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
@@ -92,21 +92,21 @@ class ChooseUnitTypeScreen extends StatelessWidget {
                         withLock: false,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 1,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
                         withLock: true,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 2,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
                         withLock: false,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 1,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
@@ -114,7 +114,7 @@ class ChooseUnitTypeScreen extends StatelessWidget {
                         withLock: false,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 1,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
@@ -122,7 +122,7 @@ class ChooseUnitTypeScreen extends StatelessWidget {
                         withLock: false,
                       ),
                     ),
-                    StaggeredGridTile.count(
+                    const StaggeredGridTile.count(
                       crossAxisCellCount: 2,
                       mainAxisCellCount: 1,
                       child: UnitContainer(
